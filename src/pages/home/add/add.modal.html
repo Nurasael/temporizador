@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Agregar Temporizador
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text color="primary" showWhen="ios">Cancelar</span>
+        <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="done()">
+    <ion-item>
+      <ion-label>Nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="temporizador.nombre" name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tiempo</ion-label>
+      <ion-datetime displayFormat="mm:ss" pickerFormat="mm ss" [(ngModel)]="temporizador.tiempo" name="tiempo"></ion-datetime>
+    </ion-item>
+    <button ion-button type="submit" block>Agregar Temporizador</button>
+  </form>
+</ion-content>
