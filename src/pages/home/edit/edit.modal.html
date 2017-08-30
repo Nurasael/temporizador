@@ -22,6 +22,6 @@
       <ion-label>Tiempo</ion-label>
       <ion-datetime displayFormat="mm:ss" pickerFormat="mm ss" [(ngModel)]="temporizador.tiempo" name="tiempo"></ion-datetime>
     </ion-item>
-    <button ion-button type="submit" block>Fin Edicion</button>
+    <button [disabled]="((temporizador.tiempo | formatoASegundos) == 0)" ion-button type="submit" block>Fin Edicion</button>
   </form>
 </ion-content>

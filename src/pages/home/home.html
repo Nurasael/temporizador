@@ -37,3 +37,20 @@
     </button>
   </ion-fab>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div>
+      <ion-title *ngIf="temporizador.id">
+        <span text-center="">{{temporizador.nombre}} - {{tiempoActual | segundosHHMMSS}}</span>
+        <button [disabled]="tiempoActual == 0" ion-button float-right="" (click)="pause ? reanudar() : pausar()">
+          <ion-icon [name]="pause ? 'play' : 'pause'"></ion-icon>
+        </button>
+        <button [disabled]="!pause" ion-button float-right="" (click)="refrescar()">
+          <ion-icon name="refresh"></ion-icon>
+        </button>
+      </ion-title>
+    </div>
+  </ion-toolbar>
+</ion-footer>
+
